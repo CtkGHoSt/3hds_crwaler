@@ -4,10 +4,8 @@
 name: Python application
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  schedule: 
+    - cron: '0 * * * *'
 
 jobs:
   build:
@@ -35,13 +33,6 @@ jobs:
       # run: |
         # pip install pytest
         # pytest
-    - name: install requirements
-      run: |
-        # pip install -r requirements.txt
-        pip list
-        echo '----'
-        ls
-        echo '----'
     - name: run 3hedashen crawler
       env: 
         CHANNEL_ID: ${{secrets.CHANNEL_ID}}
