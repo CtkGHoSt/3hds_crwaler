@@ -36,7 +36,14 @@ jobs:
         # pip install pytest
         # pytest
     - name: install requirements
+      env: 
+        CHANNEL_ID: ${{secrets.CHANNEL_ID}}
+        TG_CHAT_ID: ${{secrets.TG_CHAT_ID}} 
+        TG_BOT: ${{secrets.TG_BOT}}
       run: |
         pip install -r requirements.txt
         pip list
+        echo '----'
         ls
+        echo '----'
+        echo $CHANNEL_ID $TG_CHAT_ID $TG_BOT
