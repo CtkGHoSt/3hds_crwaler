@@ -95,7 +95,8 @@ def main():
             )
     
 if __name__ == '__main__':
-    main()
+    gslj_bot.send_message(TG_CHAT_ID, '3hedashen crawler begin')
+    # main()
 
 
 
