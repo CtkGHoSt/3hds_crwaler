@@ -87,6 +87,7 @@ def main():
     if get_post_res['status'] is False:
         gslj_bot.send_message(TG_CHAT_ID, 
         '3和大神bot运行错误:{}'.format(get_post_res['msg']))
+        return
     for item in get_post_res['result']:
         # print(item['time'], item['time'] + datetime.timedelta(hours=10))
         if item['time'] + datetime.timedelta(hours=1) > datetime.datetime.now(tz):
