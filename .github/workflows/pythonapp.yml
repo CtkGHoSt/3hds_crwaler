@@ -38,4 +38,5 @@ jobs:
         CHANNEL_ID: ${{secrets.CHANNEL_ID}}
         TG_CHAT_ID: ${{secrets.TG_CHAT_ID}} 
         TG_BOT: ${{secrets.TG_BOT}}
-      run: python 3hds_crwaler.py $CHANNEL_ID $TG_CHAT_ID $TG_BOT
+      # run: python 3hds_crwaler.py $CHANNEL_ID $TG_CHAT_ID $TG_BOT
+      run: date '+%Y-%m-%d %H:%M:%S'
