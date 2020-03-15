@@ -4,6 +4,8 @@ import json
 import datetime
 import sys
 
+from pytz import timezone
+
 import telebot
 
 from bs4 import BeautifulSoup
@@ -11,6 +13,8 @@ from bs4 import BeautifulSoup
 CHANNEL_ID = sys.argv[1]
 TG_CHAT_ID = sys.argv[2]
 TG_BOT = sys.argv[3]
+
+tz = timezone('Asia/Shanghai')
 
 def format_date(date):
     if date.find('上') != -1 :
@@ -97,7 +101,7 @@ def main():
 if __name__ == '__main__':
     gslj_bot = telebot.TeleBot(TG_BOT)
     gslj_bot.send_message(TG_CHAT_ID, '3hedashen crawler begin')
-    print(datetime.datetime.now())
+    print(datetime.datetime.now(tz))
     # main()
 
 
