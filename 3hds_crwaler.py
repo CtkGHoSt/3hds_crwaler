@@ -96,7 +96,8 @@ def main():
     
 if __name__ == '__main__':
     gslj_bot = telebot.TeleBot(TG_BOT)
-    gslj_bot.send_message(TG_CHAT_ID, '3hedashen crawler begin {}'.format(datetime))
+    gslj_bot.send_message(TG_CHAT_ID, '3hedashen crawler begin')
+    print(datetime)
     # main()
 
 
