@@ -90,9 +90,9 @@ def main():
         return
     for item in get_post_res['result']:
         # print(item['time'], item['time'] + datetime.timedelta(hours=10))
-        if item['time'] + datetime.timedelta(hours=1) > datetime.datetime.now(tz):
+        if item['time'] + datetime.timedelta(hours=1) > datetime.datetime.now(tz).replace(tzinfo=None):
             print(item)
-            gslj_bot.send_message(CHANNEL_ID, 
+            gslj_bot.send_message(TG_CHAT_ID, 
                 '发表于：{}\n\n{}\n\n{}'.format(
                     '`{}`'.format(str(item['time'])),
                     '**{}**'.format(item['string']),
