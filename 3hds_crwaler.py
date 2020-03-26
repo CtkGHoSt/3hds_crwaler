@@ -84,6 +84,8 @@ def main():
     
     link = new_post_link()
     get_post_res = get_3hds_post(link)
+    print(link)
+    print(get_post_res)
     if get_post_res['status'] is False:
         gslj_bot.send_message(TG_CHAT_ID, 
         '3和大神bot运行错误:{}'.format(get_post_res['msg']))
