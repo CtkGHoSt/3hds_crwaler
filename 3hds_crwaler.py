@@ -84,14 +84,13 @@ def main():
     
     link = new_post_link()
     get_post_res = get_3hds_post(link)
-    print(link)
-    print(get_post_res)
     if get_post_res['status'] is False:
         gslj_bot.send_message(TG_CHAT_ID, 
         '3和大神bot运行错误:{}'.format(get_post_res['msg']))
         return
     for item in get_post_res['result']:
         # print(item['time'], item['time'] + datetime.timedelta(hours=10))
+        print(item['time'] + datetime.timedelta(hours=1), '---', datetime.datetime.now(tz).replace(tzinfo=None))
         if item['time'] + datetime.timedelta(hours=1) > datetime.datetime.now(tz).replace(tzinfo=None):
             print(item)
             gslj_bot.send_message(CHANNEL_ID, 
