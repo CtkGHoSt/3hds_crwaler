@@ -90,7 +90,17 @@ def main():
         return
     for item in get_post_res['result']:
         # print(item['time'], item['time'] + datetime.timedelta(hours=10))
-        print(item['time'] + datetime.timedelta(hours=1), '---', datetime.datetime.now(tz).replace(tzinfo=None))
+        if item['time'] + datetime.timedelta(hours=1) > datetime.datetime(2020, 3, 26, 19, 35):
+            print(item)
+            gslj_bot.send_message(CHANNEL_ID, 
+                '发表于：{}\n\n{}\n\n{}'.format(
+                    '`{}`'.format(str(item['time'])),
+                    '**{}**'.format(item['string']),
+                    '[链接]({})'.format(item['link']),
+                    '__本频道内容均来自于 3hedashen.me__'
+                ), 
+                parse_mode='markdown'
+            )
         if item['time'] + datetime.timedelta(hours=1) > datetime.datetime.now(tz).replace(tzinfo=None):
             print(item)
             gslj_bot.send_message(CHANNEL_ID, 
