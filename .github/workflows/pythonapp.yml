@@ -6,8 +6,8 @@ name: Python application
 on:
   schedule: 
     - cron: '0 * * * *'
-  # push:
-  #   branches: [ master ]
+  push:
+     branches: [ master ]
 
 jobs:
   build:
