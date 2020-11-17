@@ -1,5 +1,5 @@
 # 3hds_crwaler
-爬取 http://2019.3hedashen.me/ 最近1小时更新的po文 
+爬取 http://2020.3hedashen.me/ 最近1小时更新的po文 
 
 推送至telegram频道 https://t.me/sanhewangshi 的爬虫
 
