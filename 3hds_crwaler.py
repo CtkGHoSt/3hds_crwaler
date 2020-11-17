@@ -69,14 +69,14 @@ def get_3hds_post(url):
 
 
 def new_post_link():
-    base_url = 'http://2019.3hedashen.me/'
+    base_url = 'http://2020.3hedashen.me/'
     res = requests.get(base_url)
     if res.status_code != 200:
         return False
     html = res.text
     soup = BeautifulSoup(html, 'html5lib')
     tie = soup.find_all('div', class_='blog-feed-contant')
-    tie_link = tie[1].find('a')['href']
+    tie_link = tie[2].find('a')['href']
     return tie_link
 
 def main():
